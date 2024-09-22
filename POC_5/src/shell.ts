@@ -1,11 +1,10 @@
-// import { iniciaPartida } from './motor';
-// import {tablero} from './model';
- import {agregarEventoBotonIniciarPartida,pintarTablero} from './ui';
+import { actualizarIntentos, agregarEventoBotonIniciarPartida,clickBtnEmpezarPartida} from './ui';
 
 
 
 document.addEventListener("DOMContentLoaded",function(){
-    agregarEventoBotonIniciarPartida();
-    pintarTablero();
+    clickBtnEmpezarPartida();
+    agregarEventoBotonIniciarPartida(); 
+    actualizarIntentos();
 });
 

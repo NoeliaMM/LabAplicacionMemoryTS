@@ -1,3 +1,4 @@
+
 export interface Carta {
   idFoto: number;
   imagen: string; 
@@ -22,9 +23,10 @@ export interface Tablero {
   estadoPartida: EstadoPartida;
   indiceCartaVolteadaA?: number;
   indiceCartaVolteadaB?: number;
+  intentos :number;
 }
 
-const infoCartas: InfoCarta[] = [
+export const infoCartas: InfoCarta[] = [
     {idFoto:1,imagen:'https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/memo/1.png'},
     {idFoto:2,imagen:'https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/memo/2.png'},
     {idFoto:3,imagen:'https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/memo/3.png'},
@@ -37,10 +39,10 @@ const crearCartaInicial = (idFoto: number, imagen: string): Carta => ({
     idFoto,
     imagen,
     estaVuelta: false,
-    encontrada: false,
+    encontrada: false  
 });   
 
-const crearColeccionDeCartasInicial = (infoCartas: InfoCarta[]): Carta[] => {
+export const crearColeccionDeCartasInicial = (infoCartas: InfoCarta[]): Carta[] => {
 
   const cartasTransformadas = infoCartas.map(item=>{
     
@@ -56,9 +58,10 @@ export let cartas: Carta[] = crearColeccionDeCartasInicial(infoCartas);
 
 
 
-const crearTableroInicial = (): Tablero => ({
+export const crearTableroInicial = (): Tablero => ({
   cartas: cartas,
   estadoPartida: "PartidaNoIniciada",
+  intentos :0
 });
 
 export let tablero: Tablero = crearTableroInicial();

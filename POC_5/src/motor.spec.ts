@@ -36,6 +36,7 @@ describe('sePuedeVoltearLaCarta', () => {
       cartas: [
         { idFoto: 1, imagen: 'imagen1.png', estaVuelta: false, encontrada: false },
       ],
+      intentos :2
     };
 
     const resultado = sePuedeVoltearLaCarta(tablero, 0);
@@ -48,6 +49,7 @@ describe('sePuedeVoltearLaCarta', () => {
       cartas: [
         { idFoto: 1, imagen: 'imagen1.png', estaVuelta: true, encontrada: false },
       ],
+      intentos :2
     };
 
     const resultado = sePuedeVoltearLaCarta(tablero, 0);
@@ -60,6 +62,7 @@ describe('sePuedeVoltearLaCarta', () => {
       cartas: [
         { idFoto: 1, imagen: 'imagen1.png', estaVuelta: false, encontrada: true },
       ],
+      intentos :2
     };
 
     const resultado = sePuedeVoltearLaCarta(tablero, 0);
@@ -72,6 +75,7 @@ describe('sePuedeVoltearLaCarta', () => {
       cartas: [
         { idFoto: 1, imagen: 'imagen1.png', estaVuelta: false, encontrada: false },
       ],
+      intentos :2
     };
 
     const resultado = sePuedeVoltearLaCarta(tablero, 0);
@@ -84,6 +88,7 @@ describe('sePuedeVoltearLaCarta', () => {
       cartas: [
         { idFoto: 1, imagen: 'imagen1.png', estaVuelta: false, encontrada: false },
       ],
+      intentos :2
     };
 
     const resultado = sePuedeVoltearLaCarta(tablero, 0);
