@@ -1,5 +1,3 @@
-// import { cartas } from './model';
-
 
 export function barajar(cartas: number[]): number[] {
     for (let i = cartas.length - 1; i > 0; i--) {
