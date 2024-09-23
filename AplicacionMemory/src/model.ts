@@ -55,9 +55,6 @@ export const crearColeccionDeCartasInicial = (infoCartas: InfoCarta[]): Carta[] 
 
 export let cartas: Carta[] = crearColeccionDeCartasInicial(infoCartas);
 
-
-
-
 export const crearTableroInicial = (): Tablero => ({
   cartas: cartas,
   estadoPartida: "PartidaNoIniciada",

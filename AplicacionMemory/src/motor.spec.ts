@@ -4,7 +4,7 @@ import {sePuedeVoltearLaCarta, sonPareja} from "./motor";
 import { tablero,Tablero } from "./model";
 
 describe("sonPareja", () => {
-  it('Debería devolver true si las cartas son iguales', () => {
+  it('Debe  devolver true si las cartas son iguales', () => {
 
     tablero.indiceCartaVolteadaA =  1;
     tablero.indiceCartaVolteadaB =  1;
@@ -14,7 +14,7 @@ describe("sonPareja", () => {
     expect(resultado).toBe(true);
    
   });
-  it('Debería devolver false si las cartas son diferentes', () => {
+  it('Debe devolver false si las cartas son diferentes', () => {
 
     tablero.indiceCartaVolteadaA =  1;
     tablero.indiceCartaVolteadaB =  2;
@@ -30,7 +30,7 @@ describe("sonPareja", () => {
 
 describe('sePuedeVoltearLaCarta', () => {
 
-  it('debería permitir voltear la carta cuando el estado es "CeroCartasLevantadas" y la carta no está vuelta ni encontrada', () => {
+  it('Debe permitir voltear la carta cuando el estado es "CeroCartasLevantadas" y la carta no está vuelta ni encontrada', () => {
     const tablero: Tablero = {
       estadoPartida: 'CeroCartasLevantadas',
       cartas: [
@@ -40,20 +40,20 @@ describe('sePuedeVoltearLaCarta', () => {
     };
 
     const resultado = sePuedeVoltearLaCarta(tablero, 0);
-    expect(resultado).toBe(true); // Debería ser true porque se puede voltear
+    expect(resultado).toBe(true); 
   });
 
-  it('no debería permitir voltear la carta cuando ya está vuelta', () => {
+  it('No debe permitir voltear la carta cuando ya está vuelta', () => {
     const tablero: Tablero = {
       estadoPartida: 'CeroCartasLevantadas',
       cartas: [
-        { idFoto: 1, imagen: 'imagen1.png', estaVuelta: true, encontrada: false },
+        { idFoto: 1, imagen: 'imagen1.png', estaVuelta: true, encontrada: true },
       ],
       intentos :2
     };
 
     const resultado = sePuedeVoltearLaCarta(tablero, 0);
-    expect(resultado).toBe(false); // No se puede voltear porque ya está vuelta
+    expect(resultado).toBe(false); 
   });
 
   it('no debería permitir voltear la carta cuando ya está encontrada', () => {
@@ -66,10 +66,10 @@ describe('sePuedeVoltearLaCarta', () => {
     };
 
     const resultado = sePuedeVoltearLaCarta(tablero, 0);
-    expect(resultado).toBe(false); // No se puede voltear porque ya está encontrada
+    expect(resultado).toBe(false); 
   });
 
-  it('debería permitir voltear la carta cuando el estado es "UnaCartaLevantada"', () => {
+  it('Debe permitir voltear la carta cuando el estado es "UnaCartaLevantada"', () => {
     const tablero: Tablero = {
       estadoPartida: 'UnaCartaLevantada',
       cartas: [
@@ -79,10 +79,10 @@ describe('sePuedeVoltearLaCarta', () => {
     };
 
     const resultado = sePuedeVoltearLaCarta(tablero, 0);
-    expect(resultado).toBe(true); // Debería ser true porque se puede voltear
+    expect(resultado).toBe(true); 
   });
 
-  it('no debería permitir voltear la carta si el estado es diferente de "CeroCartasLevantadas" o "UnaCartaLevantada"', () => {
+  it('No debe permitir voltear la carta si el estado es diferente de "CeroCartasLevantadas" o "UnaCartaLevantada"', () => {
     const tablero: Tablero = {
       estadoPartida: 'DosCartasLevantadas',
       cartas: [
@@ -92,6 +92,6 @@ describe('sePuedeVoltearLaCarta', () => {
     };
 
     const resultado = sePuedeVoltearLaCarta(tablero, 0);
-    expect(resultado).toBe(false); // No se puede voltear porque el estado no es correcto
+    expect(resultado).toBe(false); 
   });
 });

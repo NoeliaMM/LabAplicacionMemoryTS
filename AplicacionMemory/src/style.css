@@ -146,15 +146,21 @@ button:focus-visible {
   height: 90%;
   object-fit: cover;     
   opacity: 0; 
+  visibility: hidden; 
   transition: opacity 0.6s ease;
 }
 
 .carta.carta_vuelta img {
   opacity: 1; 
+  visibility: visible;
 }
 .carta.encontrada {
   animation: rebote 0.6s ease forwards;
   background-color: lightgreen;
+}
+.carta:hover {
+  box-shadow: 0px 15px 30px rgba(113, 174, 212, 0.881); 
+  filter: brightness(1.1); 
 }
 
 /* Animación de rebote */
@@ -181,4 +187,20 @@ button:focus-visible {
 #mensaje {
  display: none;
  }
+
+ .tooltip {
+  background-color: lightgreen;
+  color: blue; 
+  padding: 5px; 
+  border: 2px solid #f0f0f0; 
+  border-radius: 8px; 
+  font-size: 12px; 
+  text-align: center; 
+  width: 150px; 
+  position: absolute; 
+  z-index: 1000; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  white-space: pre-line;
+  pointer-events: none; 
+}
 
