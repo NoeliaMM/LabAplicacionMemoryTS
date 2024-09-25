@@ -8,7 +8,7 @@ import {
 const barajarCartas = (cartas: Carta[]): Carta[] => {
   for (let i = cartas.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [cartas[i], cartas[j]] = [cartas[j], cartas[i]];
+    [{...cartas[i]},{...cartas[j]}] = [cartas[j], cartas[i]];
   }
   return cartas;
 };
@@ -45,10 +45,8 @@ export const voltearLaCarta = (tablero: Tablero, indice: number): void => {
       tablero.indiceCartaVolteadaB = indice;
     }
 
-    tablero.cartas[indice] = {
-      ...tablero.cartas[indice],
-      estaVuelta: true,
-    };
+    tablero.cartas[indice].estaVuelta = true;
+
     gestionarEstadoPartida(tablero);
   } else {
     console.error(`No se encontró ninguna carta con el índice ${indice}`);

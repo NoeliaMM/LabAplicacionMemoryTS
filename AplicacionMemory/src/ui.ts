@@ -53,7 +53,7 @@ const mostrarMensaje = (evento: MouseEvent) => {
 export const pintarTablero = (tablero: Tablero) => {
   const contenedorCartas = document.getElementById("contenedor_cartas");
   if (contenedorCartas) {
-    contenedorCartas.innerHTML = ""; // Elimina todo el contenido anterior
+    contenedorCartas.innerHTML = "";
   }
 
   for (let i = 0; i < tablero.cartas.length; i++) {
